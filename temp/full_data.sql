@@ -16,14 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Current Database: `joby_jobs`
---
-
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `joby_jobs` /*!40100 DEFAULT CHARACTER SET utf8 */;
-
-USE `joby_jobs`;
-
---
 -- Dumping data for table `admin_person_settings`
 --
 
@@ -57,7 +49,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `applications` WRITE;
 /*!40000 ALTER TABLE `applications` DISABLE KEYS */;
-INSERT INTO `applications` VALUES (2,13,10,1,'2018-02-01 13:07:29','The user has applied for the position;',NULL,'2018-02-01 13:07:29',''),(4,13,12,1,'2018-02-01 14:37:14','The user has applied for the position;',NULL,'2018-02-01 14:37:14',''),(5,19,10,1,'2018-02-01 14:39:50','The user has applied for the position;',NULL,'2018-02-01 14:39:49','');
+INSERT INTO `applications` VALUES (2,13,10,1,'2018-02-01 13:07:29','The user has applied for the position;',NULL,'2018-02-01 13:07:29',''),(4,13,12,1,'2018-02-01 14:37:14','The user has applied for the position;',NULL,'2018-02-01 14:37:14',''),(5,19,10,2,'2018-02-01 14:39:50','המועמד לא יודע לתכנת בצד השרת',NULL,'2018-02-01 14:39:49','');
 /*!40000 ALTER TABLE `applications` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -85,7 +77,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `employer_persons` WRITE;
 /*!40000 ALTER TABLE `employer_persons` DISABLE KEYS */;
-INSERT INTO `employer_persons` VALUES (2,'224fd89b-d292-45e4-b54e-21f5a17dcd2b',7,NULL,'Ori','Ahdout','039940999','oria@yes.co.il',NULL,'073233838','0001-01-01 00:00:00','\0','\0','2018-01-30 11:15:14');
+INSERT INTO `employer_persons` VALUES (2,'224fd89b-d292-45e4-b54e-21f5a17dcd2b',7,NULL,'Ariel','Baruch','012030022','oria@yes.co.il','Sales Manager','0501234567','0001-01-01 00:00:00','\0','\0','2018-01-30 11:15:14');
 /*!40000 ALTER TABLE `employer_persons` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -104,7 +96,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `employers` WRITE;
 /*!40000 ALTER TABLE `employers` DISABLE KEYS */;
-INSERT INTO `employers` VALUES (7,'Yes','Vaisman 16, Tel Aviv','073233838','Ori Ahdout','0549980099','430947934','2018-01-30 11:15:14','yes_logo.png','about','www.yes.co.il','\0','2018-01-30 11:15:14');
+INSERT INTO `employers` VALUES (7,'Yes','Vaizman 22, TA','0545498009','zvi','0543949949',NULL,'2018-01-30 11:15:14','yespng','about','http://www.websiteurl.com','\0','2018-01-30 11:15:14');
 /*!40000 ALTER TABLE `employers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -160,6 +152,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `interviews` WRITE;
 /*!40000 ALTER TABLE `interviews` DISABLE KEYS */;
+INSERT INTO `interviews` VALUES (3,'9209e1f8-0ba0-46f1-9a0d-6082b42896bd',7,NULL,19,'2018-02-06 14:11:39',4,'מצא עבודה אחרת','2018-02-03 12:00:00','חדר ישיבות שני','לנסות לרכז לראיון אחד כוח אדם וראיון ראשון','2018-02-06 14:11:39','');
 /*!40000 ALTER TABLE `interviews` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -171,6 +164,15 @@ LOCK TABLES `languages` WRITE;
 /*!40000 ALTER TABLE `languages` DISABLE KEYS */;
 INSERT INTO `languages` VALUES (1,'he','Hebrew','עברית',''),(2,'en','English','english',''),(3,'ru','Russian','russian','');
 /*!40000 ALTER TABLE `languages` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `position_notifiables`
+--
+
+LOCK TABLES `position_notifiables` WRITE;
+/*!40000 ALTER TABLE `position_notifiables` DISABLE KEYS */;
+/*!40000 ALTER TABLE `position_notifiables` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -218,7 +220,6 @@ UNLOCK TABLES;
 
 LOCK TABLES `reactions` WRITE;
 /*!40000 ALTER TABLE `reactions` DISABLE KEYS */;
-INSERT INTO `reactions` VALUES (6,13,NULL,3,10,NULL,'\0','2018-01-30 13:01:54',''),(9,13,NULL,5,10,2,'\0','2018-01-30 13:15:23','');
 /*!40000 ALTER TABLE `reactions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -267,7 +268,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `seekers` WRITE;
 /*!40000 ALTER TABLE `seekers` DISABLE KEYS */;
-INSERT INTO `seekers` VALUES (13,'a8decc95-0a12-4a1c-865f-44e8124ea604','Stav','Aharon','0545112515','038009203','ahdout854@gmail.com','0001-01-01 00:00:00','1985-10-31 00:00:00',0,0,NULL,'\0','2018-01-30 09:46:52'),(14,'765f9e45-1e6c-48d0-91fb-61520625cf92','Stav','Aharon','0545112515','038009203','ahdout855@gmail.com','0001-01-01 00:00:00','1985-10-31 00:00:00',0,0,NULL,'\0','2018-01-30 15:23:11'),(15,'18c638e5-0525-4009-8015-ee81491606cf','Stav','Aharon','0545112515','038009203','ahdout861@gmail.com','0001-01-01 00:00:00','1985-10-31 00:00:00',0,0,NULL,'\0','2018-01-31 14:07:06'),(16,'0a2db9c8-d7dd-452f-99ae-14beb3cbb492','Danny','Aharon','0545112515','038009203','ahdout856@gmail.com','2018-02-01 14:37:39','1985-10-31 00:00:00',1,0,NULL,'\0','2018-02-01 14:37:38'),(17,'5a8ece75-aefc-480f-97f1-8167a0168b5c','Danny','Aharon','0545112515','038009203','ahdout856@gmail.com','2018-02-01 14:37:41','1985-10-31 00:00:00',1,0,NULL,'\0','2018-02-01 14:37:40'),(18,'cf2ab9da-a03e-4757-836a-31abd9c4e6b6','Danny','Aharon','0545112515','038009203','ahdout856@gmail.com','2018-02-01 14:37:45','1985-10-31 00:00:00',1,0,NULL,'\0','2018-02-01 14:37:44'),(19,'c9ab9df8-b053-473c-8a69-e078b02bf1c7','Shimon','Aharon','0545112515','038009203','ahdout856@gmail.com','2018-02-01 14:38:47','1985-10-31 00:00:00',1,0,NULL,'','2018-02-01 14:38:46');
+INSERT INTO `seekers` VALUES (13,'a8decc95-0a12-4a1c-865f-44e8124ea604','Stav','Aharon','0545112515','038009203','ahdout854@gmail.com','0001-01-01 00:00:00','1985-10-31 00:00:00',0,0,NULL,'\0','2018-02-06 18:16:47'),(14,'765f9e45-1e6c-48d0-91fb-61520625cf92','Stav','Aharon','0545112515','038009203','ahdout855@gmail.com','0001-01-01 00:00:00','1985-10-31 00:00:00',0,0,NULL,'\0','2018-02-06 18:16:47'),(15,'18c638e5-0525-4009-8015-ee81491606cf','Stav','Aharon','0545112515','038009203','ahdout861@gmail.com','0001-01-01 00:00:00','1985-10-31 00:00:00',0,0,NULL,'\0','2018-02-06 18:16:47'),(16,'0a2db9c8-d7dd-452f-99ae-14beb3cbb492','Danny','Aharon','0545112515','038009203','ahdout856@gmail.com','2018-02-01 14:37:39','1985-10-31 00:00:00',1,0,NULL,'\0','2018-02-06 18:16:47'),(17,'5a8ece75-aefc-480f-97f1-8167a0168b5c','Danny','Aharon','0545112515','038009203','ahdout856@gmail.com','2018-02-01 14:37:41','1985-10-31 00:00:00',1,0,NULL,'\0','2018-02-06 18:16:47'),(18,'cf2ab9da-a03e-4757-836a-31abd9c4e6b6','Danny','Aharon','0545112515','038009203','ahdout856@gmail.com','2018-02-01 14:37:45','1985-10-31 00:00:00',1,0,NULL,'\0','2018-02-06 18:16:47'),(19,'c9ab9df8-b053-473c-8a69-e078b02bf1c7','Ori','Aharon','0545112665','038009204','ahdout856@gmail.com','2018-02-01 14:38:47','1985-10-31 00:00:00',2,4,NULL,'','2018-02-06 18:24:44');
 /*!40000 ALTER TABLE `seekers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -327,4 +328,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-02-01 17:21:51
+-- Dump completed on 2018-02-12  0:39:17
